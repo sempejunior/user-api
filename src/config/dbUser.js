@@ -13,6 +13,8 @@ function findUsers(callback) {
         return error;
     }
 
+    
+
 }
 
 function findOne(request, callback) {
