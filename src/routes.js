@@ -1,16 +1,18 @@
 const express = require('express');
 const EmailController = require('./controllers/EmailController');
-const InformationController = require('./controllers/InformationController');
+const UserController = require('./controllers/UserController');
 const routes = express.Router();
 
-routes.post('/sendEmail', EmailController.sendMail);
+routes.post('/email', EmailController.sendMail);
 
-routes.get('/information', InformationController.getInformation);
+routes.get('/users', UserController.getUser);
 
-routes.get('/information/:id', InformationController.getInformationWithID );
+routes.get('/users/:id', UserController.getUserWithID );
 
+routes.post('/users/', UserController.insertUser);
 
+routes.put('/users/:id', UserController.updateUser);
 
-// routes.get('/information', )
+routes.delete('/users/:id', UserController.deleteUser);
 
 module.exports = routes;
